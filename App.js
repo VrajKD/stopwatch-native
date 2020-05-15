@@ -89,6 +89,10 @@ export default class App extends React.Component {
     running: false
   }
 
+  componentWillUnmount() {
+    clearInterval(this.timer)
+  }
+
   start = () => {
     const now = new Date().getTime();
     this.setState({
